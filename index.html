@@ -65,12 +65,12 @@
               <li>Controllers</li>
               <li>Scope</li>
             </ol>
-            <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            <p><a class="btn btn-default" href="#" role="button">View details </a></p>
           </div>
           <div class="col-md-4">
             <h2>Setting up Angular App</h2>
             <p>When setting up Angular app you must instantiate the app through a <code>&lt;angular.module('moduleName', [])&gt;</code> command. This tells Angular to create the module through the second parameter (the brackets [] - empty array).</p>
-            <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            <p><a class="btn btn-default" href="#" role="button">View details </a></p>
          </div>
           <div class="col-md-4">
             <h2>Scope is an important Angular concept</h2>
@@ -79,7 +79,7 @@
               <li>where the function is defined in the controller </li>
               <li>where the scope is injected into the framework of the HTML</li>
             </ul>
-            <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            <p><a class="btn btn-default" href="#" role="button">View details</a></p>
           </div>
         </div>
 
@@ -89,22 +89,25 @@
           <!--scope of mainCtrl  -->
           <div ng-controller="mainCtrl"  class="">
             <h1>ToDo List</h1>
-            <div class="row rowItem" ng-repeat="todo in todos">
+            <div class="add">
+              <a ng-click="addTodo()" class="btn btn-success" href="">Add new item</a>
+            </div>
+            <div ng-class="{'edited': todo.edited}" class="row item" ng-repeat="todo in todos" >
               <div class="col-xs-9">
-                <div class="input-group list ">
+                <div class="input-group list">
                   <span class="input-group-addon">
                     <input ng-model="todo.completed" type="checkbox">
                   </span>
                   <label ng-hide="editing" class="editing-label listItem">{{todo.name}}</label>
-                  <input ng-change="learningNgChange()" ng-blur="editing = false" ng-show="editing" ng-model="todo.name" class="editing-label form-control" type="text" name="name" value=""/>
+                  <input ng-change="todo.edited = true" ng-blur="editing = false" ng-show="editing" ng-model="todo.name" class="editing-label form-control" type="text" name="name" value=""/>
                 </div>
               </div>
               <div class="col-xs-3">
                 <div class="actions btn-group" role="group">
                    <!--empty hrefs to prevent link away from page-->
-                  <a class="btn btn-info" type="button" href="" ng-click=" editing = !editing">Edit</a>
-                  <a class="btn btn-primary" type="button" href="" ng-click="helloWorld()" >Save</a>
-                  <a class="btn btn-danger" type="button" href="" >Delete</a>
+                  <a class="btn btn-info" type="button" href="" ng-click="editing = !editing">Edit</a>
+                  <a ng-click="saveTodo(todo)" class="btn btn-primary" type="button" href="">Save</a>
+                  <a ng-click="deleteTodo(todo, $index)" class="btn btn-danger" type="button" href="" >Delete</a>
                 </div>
               </div>
             </div><!-- ng-repeat scope -->
