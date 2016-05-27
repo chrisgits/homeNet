@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,mQAGyG;;AAIzG,IAAK,GACH,gBAAgB,EAAE,SAAS;;;AAG7B,UAAW,GACT,UAAU,EAAE,MAAM;;;AAGpB,MAAO,GACL,UAAU,EAAE,MAAM;;;AAGpB,YAAa,GACX,UAAU,EAAE,MAAM;;;AAGpB,QAAS,GACP,MAAM,EAAE,OAAO;;;AAGjB,SAAU,GACR,WAAW,EAAE,GAAG,EAChB,YAAY,EAAE,IAAI,EAClB,MAAM,EAAE,IAAI",
+"sources": ["../sass/screen.scss"],
+"names": [],
+"file": "screen.css"
+}

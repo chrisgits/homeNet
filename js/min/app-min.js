@@ -1,0 +1,1 @@
+angular.module("homeNet",[]).controller("mainCtrl",function(e){e.learningNgChange=function(){console.log("An input Changed")},e.todos=[{name:"clean the house"},{name:"water the lawn"},{name:"feed the dog"},{name:"pay the bills"},{name:"learn Angular"}]});
