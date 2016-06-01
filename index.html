@@ -92,7 +92,7 @@
             <div class="add">
               <a ng-click="addTodo()" class="btn btn-success" href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> new item</a>
             </div>
-            <div ng-class="{'edited': todo.edited}" class="row item" ng-repeat="todo in todos" >
+            <div ng-class="{'edited': todo.edited}" class="row item" ng-repeat="todo in todos | orderBy: 'completed' " ng-init="todo.completed = false" >
               <div class="col-xs-9">
                 <div class="input-group list">
                   <span class="input-group-addon">

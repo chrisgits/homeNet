@@ -6,7 +6,9 @@ angular.module('homeNet')
 	.controller('mainCtrl', function($scope, dataService) {
     $scope.addTodo = function() {
       var todo = {name: "This is a new todo."};
-      $scope.todos.push(todo);
+      $scope.todos.unshift(todo);
+      //unshift adds to beginning of array
+      //push adds to end of array
     };
 
     dataService.getTodos(function(response) {
@@ -23,4 +25,4 @@ angular.module('homeNet')
       dataService.saveTodo(todo);
     };
 
-  })//mainCtrl
+  });//mainCtrl
