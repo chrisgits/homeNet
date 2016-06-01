@@ -24,7 +24,8 @@ angular.module('homeNet', [])
       dataService.saveTodo(todo);
     };
 
-  })
+  })//mainCtrl
+  
     .service('dataService', function($http) {
       this.getTodos = function(callback) {
           $http.get('mock/todos.json')
@@ -39,11 +40,7 @@ angular.module('homeNet', [])
       this.saveTodo = function(todo) {
         
       }
-      
-  
-  
-  
-      })
+    }) //data service
     
 
 ;// homeNet module

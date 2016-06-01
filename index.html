@@ -90,7 +90,7 @@
           <div ng-controller="mainCtrl"  class="">
             <h1>ToDo List</h1>
             <div class="add">
-              <a ng-click="addTodo()" class="btn btn-success" href="">Add new item</a>
+              <a ng-click="addTodo()" class="btn btn-success" href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> new item</a>
             </div>
             <div ng-class="{'edited': todo.edited}" class="row item" ng-repeat="todo in todos" >
               <div class="col-xs-9">
