@@ -1,1 +1,1 @@
-"use strict";angular.module("homeNet",[]).controller("mainCtrl",function(o,e){o.addTodo=function(){var e={name:"This is a new todo."};o.todos.push(e)},e.getTodos(function(e){o.todos=e.data}),o.deleteTodo=function(t,n){e.deleteTodo(t),o.todos.splice(n,1)},o.saveTodo=function(o){e.saveTodo(o)}}).service("dataService",function(o){this.getTodos=function(e){o.get("mock/todos.json").then(e)},this.deleteTodo=function(o){console.log("The "+o.name+" task has been deleted!")},this.saveTodo=function(o){}});
+"use strict";angular.module("homeNet",[]);

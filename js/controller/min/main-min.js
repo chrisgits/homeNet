@@ -1,0 +1,1 @@
+"use strict";angular.module("homeNet").controller("mainCtrl",function(o,t){o.addTodo=function(){var t={name:"This is a new todo."};o.todos.push(t)},t.getTodos(function(t){o.todos=t.data}),o.deleteTodo=function(e,d){t.deleteTodo(e),o.todos.splice(d,1)},o.saveTodo=function(o){t.saveTodo(o)}});
