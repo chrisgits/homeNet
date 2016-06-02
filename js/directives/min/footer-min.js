@@ -1,0 +1,1 @@
+"use strict";angular.module("homeNet").directive("copyright",function(){return{templateURL:"templates/copyright.html",replace:!0}});

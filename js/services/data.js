@@ -14,9 +14,9 @@ angular.module('homeNet')
         //simulate delete from DB.
       };
       
-      this.saveTodo = function(todo) {
-        console.log("The " + todo.name + " task has been deleted!");
-        //simulate save from DB.
+      this.saveTodos = function(todos) {
+        console.log(todos.length + " todos has been saved!");
+        //simulate delete from DB.
       };
 
 }); //data service

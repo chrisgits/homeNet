@@ -86,40 +86,20 @@
         <hr>
 
         <div class="todoList">
+
           <!--scope of mainCtrl  -->
-          <div ng-controller="mainCtrl"  class="">
-            <h1>ToDo List</h1>
-            <div class="add">
-              <a ng-click="addTodo()" class="btn btn-success" href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> new item</a>
-            </div>
-            <div ng-class="{'edited': todo.edited}" class="row item" ng-repeat="todo in todos | orderBy: 'completed' " ng-init="todo.completed = false" >
-              <div class="col-xs-9">
-                <div class="input-group list">
-                  <span class="input-group-addon">
-                    <input ng-model="todo.completed" type="checkbox">
-                  </span>
-                  <label ng-hide="editing" class="editing-label listItem">{{todo.name}}</label>
-                  <input ng-change="todo.edited = true" ng-blur="editing = false" ng-show="editing" ng-model="todo.name" class="editing-label form-control" type="text" name="name" value=""/>
-                </div>
-              </div>
-              <div class="col-xs-3">
-                <div class="actions btn-group" role="group">
-                   <!--empty hrefs to prevent link away from page-->
-                  <a class="btn btn-info" type="button" href="" ng-click="editing = !editing">Edit</a>
-                  <a ng-click="saveTodo(todo)" class="btn btn-primary" type="button" href="">Save</a>
-                  <a ng-click="deleteTodo(todo, $index)" class="btn btn-danger" type="button" href="" >Delete</a>
-                </div>
-              </div>
-            </div><!-- ng-repeat scope -->
-          </div>
-          <!--scope of mainCtrl  -->
-        </div><!-- row /todoList  -->
+          <todos></todos>
+
+        </div><!-- /todoList  -->
 
         <hr>
 
-        <footer network-footer>
-          <p>© 2016 Pixel Engineering Co</p>
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">2016 &copy Pixel Engineering Co</p>
+          </div>
         </footer>
+
       </div> <!-- /container -->
 
 
@@ -134,7 +114,7 @@
       <script src="js/app.js"></script>
       <script src="js/controller/main.js" charset="utf-8"></script>
       <script src="js/services/data.js" charset="utf-8"></script>
-      <script src="js/controller/homeNetwork.js" charset="utf-8"></script>
+      <script src="js/directives/todos.js" charset="utf-8"></script>
       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 
   </body>

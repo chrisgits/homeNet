@@ -21,8 +21,13 @@ angular.module('homeNet')
       $scope.todos.splice($index, 1);
     };
   
-    $scope.saveTodo = function(todo) {
-      dataService.saveTodo(todo);
+    $scope.saveTodos = function(todo) {
+      var filteredTodos = $scope.todos.filter(function(todo) { //iteration of array
+        if(todo.edited) {
+          return todo;
+        }
+      });
+      dataService.saveTodos(filteredTodos);
     };
 
   });//mainCtrl

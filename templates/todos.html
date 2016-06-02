@@ -1,0 +1,26 @@
+<div ng-controller="mainCtrl">
+  <h1>ToDo List</h1>
+  <div class="add">
+    <a ng-click="addTodo()" class="btn btn-success" href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> new item</a>
+  </div>
+  <!-- row -->
+  <div ng-class="{'edited': todo.edited}" class="row item" ng-repeat="todo in todos | orderBy: 'completed' " ng-init="todo.completed = false" >
+    <div class="col-xs-9">
+      <div class="input-group list">
+        <span class="input-group-addon">
+          <input ng-model="todo.completed" type="checkbox">
+        </span>
+        <label ng-click="editing = true" ng-hide="editing" class="editing-label listItem">{{todo.name}}</label>
+        <input ng-change="todo.edited = true" ng-blur="editing = false" ng-show="editing" ng-model="todo.name" class="editing-label form-control" type="text" name="name" value=""/>
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <div class="actions btn-group" role="group">
+         <!--empty hrefs to prevent link away from page-->
+        <!-- <a class="btn btn-info" type="button" href="" ng-click="editing = !editing">Edit</a> -->
+        <a ng-click="saveTodos(todo)" class="btn btn-primary" type="button" href="">Save</a>
+        <a ng-click="deleteTodo(todo, $index)" class="btn btn-danger" type="button" href="" >Delete</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1 @@
+angular.module("homeNet").directive("todos",function(){return{templateUrl:"templates/todos.html",replace:!0}});
